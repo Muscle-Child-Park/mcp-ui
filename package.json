@@ -11,11 +11,11 @@
     "eject": "expo eject",
     "storybook:web": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "storybook-generate": "sb-rn-get-stories --config-path .ondevice",
-    "storybook-watch": "sb-rn-watcher --config-path .ondevice",
-    "storybook": "sb-rn-get-stories --config-path .ondevice && cross-env STORYBOOK_ENABLED='true' expo start",
-    "storybook:ios": "sb-rn-get-stories --config-path .ondevice && cross-env STORYBOOK_ENABLED='true' expo start --ios",
-    "storybook:android": "sb-rn-get-stories --config-path .ondevice && cross-env STORYBOOK_ENABLED='true' expo start --android"
+    "storybook-generate": "sb-rn-get-stories --config-path src/.ondevice",
+    "storybook-watch": "sb-rn-watcher --config-path src/.ondevice",
+    "storybook": "sb-rn-get-stories --config-path src/.ondevice && cross-env STORYBOOK_ENABLED='true' expo start",
+    "storybook:ios": "sb-rn-get-stories --config-path src/.ondevice && cross-env STORYBOOK_ENABLED='true' expo start --ios",
+    "storybook:android": "sb-rn-get-stories --config-path src/.ondevice && cross-env STORYBOOK_ENABLED='true' expo start --android"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.18.2",

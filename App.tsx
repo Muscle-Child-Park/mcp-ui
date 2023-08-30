@@ -12,7 +12,7 @@ function App() {
 let AppEntryPoint = App;
 
 if (Constants.expoConfig?.extra?.storybookEnabled === "true") {
-  AppEntryPoint = require("./.ondevice").default;
+  AppEntryPoint = require("./src/.ondevice").default;
 }
 
 const styles = StyleSheet.create({
