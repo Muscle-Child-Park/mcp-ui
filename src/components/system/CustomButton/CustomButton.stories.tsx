@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native";
 import CustomButton from "./CustomButton";
 import { View } from "react-native";
-import { colors } from "../../../constants/colors";
 
 const meta: ComponentMeta<typeof CustomButton> = {
   title: "Components/System/CustomButton",
@@ -11,7 +10,7 @@ const meta: ComponentMeta<typeof CustomButton> = {
   },
   // tags: ["autodocs"],
   args: {
-    text: "Hello world",
+    text: "Hello world!",
   },
   decorators: [
     // 필수
@@ -33,20 +32,14 @@ export default meta;
 
 type Story = ComponentStory<typeof CustomButton>;
 
-export const SmallButton: Story = (args) => (
-  <CustomButton
-    {...args}
-    layoutmode="small"
-    variant="fill"
-    bgColor={colors.primary}
-  />
+export const FillButton: Story = (args) => (
+  <CustomButton {...args} layoutmode="fullWidth" variant="fillPrimary" />
 );
 
-export const BigButton: Story = (args) => (
-  <CustomButton
-    {...args}
-    layoutmode="fullWidth"
-    variant="fill"
-    bgColor={colors.primary}
-  />
+export const StrokeButton: Story = (args) => (
+  <CustomButton {...args} layoutmode="fullWidth" variant="stroke" />
+);
+
+export const BasicButton: Story = (args) => (
+  <CustomButton {...args} layoutmode="basic" />
 );

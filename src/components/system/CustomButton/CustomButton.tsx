@@ -9,11 +9,9 @@ import { colors } from "../../../constants/colors";
 
 interface CustomButtonProps {
   text: string;
-  layoutmode: "small" | "fullWidth";
-  variant: "stroke" | "fill" | "big" | "whiteBig";
-  className?: string;
+  layoutmode?: "basic" | "fullWidth";
+  variant?: "stroke" | "fillPrimary";
   isActive?: boolean;
-  bgColor?: string;
   disabled?: boolean;
 }
 
@@ -21,72 +19,70 @@ interface Props extends TouchableOpacityProps, CustomButtonProps {}
 
 const CustomButton = ({
   text,
-  layoutmode,
+  layoutmode = "basic",
   variant,
-  className,
   isActive = false,
-  bgColor = colors.primary,
   disabled,
   ...rest
 }: Props) => {
-  const { width: deviceWidth } = useWindowDimensions();
-  const buttonStyles = StyleSheet.create({
-    button: {
-      // flex: 1,
-      // marginHorizontal: 16,
-      width: layoutmode === "fullWidth" ? deviceWidth - 40 : deviceWidth - 75, // 레이아웃 모드에 따라 width 조절
-      minHeight: 52,
-      maring: "auto",
-      alignItems: "center",
-      justifyContent: "center",
-      paddingHorizontal: 20,
-      borderRadius: 8,
-      opacity: variant === "fill" && !isActive ? 0.4 : 1, // for Survey's Next Btn
-      // elevation: 6,
-      backgroundColor:
-        variant === "fill" || variant === "big" || isActive ? bgColor : "white",
-      borderWidth: variant === "stroke" ? 2 : 0,
-      borderColor:
-        variant === "stroke" && !isActive ? colors.testBorder : "transparent",
-      // shadowColor: '#171717',
-      // shadowOffset: {width: -3, height: 3},
-      // shadowOpacity: 0.2,
-      // shadowRadius: 3,
-    },
-    // active: {
-    //   backgroundColor: '#404040',
-    //   borderColor: 'transparent',
-    // },
-    text: {
-      fontSize: variant === "stroke" ? 15 : 18,
-      lineHeight: 21.48,
-      fontWeight: "bold",
-      letterSpacing: 0.25,
-      color:
-        variant === "whiteBig" || (variant === "stroke" && !isActive)
-          ? "black"
-          : "white",
-      // textAlign: 'center',
-    },
-  });
-
-  type styleKeys = keyof typeof buttonStyles;
-
-  const selectedStyles = className ? buttonStyles[className as styleKeys] : {};
+  const { width } = useWindowDimensions();
 
   return (
-    // <Pressable
     <TouchableOpacity
       style={[
         buttonStyles.button,
-        selectedStyles,
-        disabled && { opacity: 0.7 },
+        layoutmode === "fullWidth" && {
+          width: width - 40,
+        },
+        variant === "stroke" && {
+          backgroundColor: "white",
+          borderWidth: 1,
+          borderColor: colors.primary,
+        },
+        variant === "fillPrimary" && {
+          backgroundColor: colors.primary,
+        },
+        // disabled && {opacity: 0.7},
+        disabled && { backgroundColor: colors.gray25 },
       ]}
       {...rest}
     >
-      <Text style={buttonStyles.text}>{text}</Text>
+      <Text
+        style={[
+          buttonStyles.text,
+          // layoutmode === "fullWidth" && {
+          //   fontSize: 16,
+          //   fontWeight: "500",
+          //   lineHeight: 19.2,
+          // },
+          variant === "stroke" && { color: colors.primary },
+          variant === "fillPrimary" && { color: "white" },
+          disabled && { color: "white" },
+        ]}
+      >
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
+
+const buttonStyles = StyleSheet.create({
+  button: {
+    width: "100%",
+    minHeight: 52,
+    paddingHorizontal: 29,
+    paddingVertical: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    backgroundColor: colors.background,
+  },
+  text: {
+    color: colors.gray100,
+    lineHeight: 19.2,
+    fontWeight: "500",
+    fontSize: 16,
+  },
+});
 
 export default CustomButton;
