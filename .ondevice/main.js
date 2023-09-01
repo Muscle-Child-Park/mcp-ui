@@ -1,24 +1,19 @@
+const path = require("path");
+
 module.exports = {
-  stories: [
-    "../components/**/*.stories.mdx",
-    "../components/**/*.stories.@(js|jsx|ts|tsx)",
-    "../components/**/*.stories.?(ts|tsx|js|jsx)",
-  ],
+  stories: ["../src/components/**/*.stories.?(ts|tsx|js|jsx)"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-react-native-web",
+    "@storybook/addon-ondevice-controls",
+    "@storybook/addon-ondevice-actions",
+    "@storybook/addon-ondevice-backgrounds",
+    "@storybook/addon-ondevice-notes",
   ],
-  core: {
-    builder: "webpack5",
-  },
-  staticDirs: ["../assets"],
-  framework: "@storybook/react",
+  staticDirs: ["../src/assets"],
   webpackFinal: async (config) => {
-    // absolute route ('src/')
+    // absolute route ('@/')
     config.resolve ??= {};
     config.resolve.alias ??= {};
-    config.resolve.alias["src"] = path.resolve(__dirname, "../../src");
+    config.resolve.alias["src"] = path.resolve(__dirname, "../src");
 
     // set up svgr
     const imageRule = config.module?.rules?.find((rule) => {
