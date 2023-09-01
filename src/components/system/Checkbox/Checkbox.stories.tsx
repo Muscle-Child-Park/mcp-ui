@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
 import Checkbox from "./Checkbox";
 import { View } from "react-native";
-import { colors } from "../../../constants/colors";
+import { colors } from "src/constants/colors";
 
 const meta: ComponentMeta<typeof Checkbox> = {
   title: "Components/System/Checkbox",

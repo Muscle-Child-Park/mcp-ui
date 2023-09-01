@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TimeButton } from "../TimeButton";
-import { afternoon, morning } from "../../../constants/time";
-import { colors } from "../../../constants/colors";
+import { afternoon, morning } from "src/constants/time";
+import { colors } from "src/constants/colors";
 
 type timeType = "오전" | "오후";
 

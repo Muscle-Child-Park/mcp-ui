@@ -5,7 +5,7 @@ import {
   TouchableOpacityProps,
   useWindowDimensions,
 } from "react-native";
-import { colors } from "../../../constants/colors";
+import { colors } from "src/constants/colors";
 interface CustomButtonProps {
   text: string;
   layoutmode?: "basic" | "fullWidth";

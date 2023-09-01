@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, useWindowDimensions, StyleSheet, View } from "react-native";
-import { colors } from "../../../constants/colors";
+import { colors } from "src/constants/colors";
 
 interface Props {
   percent: number;

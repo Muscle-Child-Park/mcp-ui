@@ -15,10 +15,10 @@ module.exports = {
   staticDirs: ["../assets"],
   framework: "@storybook/react",
   webpackFinal: async (config) => {
-    // absolute route ('@/')
-    // config.resolve ??= {};
-    // config.resolve.alias ??= {};
-    // config.resolve.alias["@"] = path.resolve(__dirname, "../src");
+    // absolute route ('src/')
+    config.resolve ??= {};
+    config.resolve.alias ??= {};
+    config.resolve.alias["src"] = path.resolve(__dirname, "../../src");
 
     // set up svgr
     const imageRule = config.module?.rules?.find((rule) => {

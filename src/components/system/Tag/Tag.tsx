@@ -1,7 +1,6 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import { colors } from "../../../constants/colors";
-
+import { colors } from "src/constants/colors";
 interface Props {
   isSelected?: boolean;
   onClick?: () => void;

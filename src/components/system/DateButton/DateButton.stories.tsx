@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
 import DateButton from "./DateButton";
 import { View } from "react-native";
-import { format } from "date-fns";
 
 const meta: ComponentMeta<typeof DateButton> = {
   title: "Components/System/DateButton",

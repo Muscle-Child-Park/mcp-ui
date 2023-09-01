@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
 import ExcerciseChips from "./ExcerciseChips";
 import { View } from "react-native";
-import { ExcerciseChipsNames } from "../../../constants/common";
+import { ExcerciseChipsNames } from "src/constants/common";
 
 const meta: ComponentMeta<typeof ExcerciseChips> = {
   title: "Components/System/ExcerciseChips",

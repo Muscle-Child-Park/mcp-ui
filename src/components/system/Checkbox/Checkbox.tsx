@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable, ViewStyle } from "react-native";
-import { Check } from "../../../assets";
+import { Check } from "src/assets";
 
 interface Props {
   isChecked: boolean;

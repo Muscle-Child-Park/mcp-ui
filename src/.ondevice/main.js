@@ -9,9 +9,9 @@ module.exports = {
   staticDirs: ["../assets"],
   webpackFinal: async (config) => {
     // absolute route ('@/')
-    // config.resolve ??= {};
-    // config.resolve.alias ??= {};
-    // config.resolve.alias["@"] = path.resolve(__dirname, "../src");
+    config.resolve ??= {};
+    config.resolve.alias ??= {};
+    config.resolve.alias["src"] = path.resolve(__dirname, "../../src");
 
     // set up svgr
     const imageRule = config.module?.rules?.find((rule) => {

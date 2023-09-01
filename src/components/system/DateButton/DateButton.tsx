@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { format } from "date-fns";
 import { ko } from "date-fns/locale";
-import { colors } from "../../../constants/colors";
+import { colors } from "src/constants/colors";
 
 interface Props {
   date: Date;
