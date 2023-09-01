@@ -12,5 +12,32 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
+  staticDirs: ["../assets"],
   framework: "@storybook/react",
+  webpackFinal: async (config) => {
+    // absolute route ('@/')
+    // config.resolve ??= {};
+    // config.resolve.alias ??= {};
+    // config.resolve.alias["@"] = path.resolve(__dirname, "../src");
+
+    // set up svgr
+    const imageRule = config.module?.rules?.find((rule) => {
+      const test = rule.test;
+
+      if (!test) {
+        return false;
+      }
+
+      return test.test(".svg");
+    });
+
+    imageRule.exclude = /\.svg$/;
+
+    config.module?.rules?.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 };
