@@ -1,5 +1,6 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "src/constants/colors";
 
 interface Props {
@@ -8,12 +9,12 @@ interface Props {
   selected: string | null;
   isActive: boolean;
 }
-// just for storybook
-// const backgroundColor = {
-//   able: ["#EBECEC", "#FFFFFF"],
-//   disable: ["#E4E4E4", "#F3F3F3"],
-//   selected: ["#1F70FF", "#EEF3FF"],
-// };
+
+const backgroundColor = {
+  able: ["#EBECEC", "#FFFFFF"],
+  disable: ["#E4E4E4", "#F3F3F3"],
+  selected: ["#1F70FF", "#EEF3FF"],
+};
 
 const TimeButton = ({ time, onSelectTime, selected, isActive }: Props) => {
   return (
@@ -24,16 +25,20 @@ const TimeButton = ({ time, onSelectTime, selected, isActive }: Props) => {
         onSelectTime(time);
       }}
     >
-      <View
+      <LinearGradient
+        start={{ x: 1, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        colors={
+          !isActive
+            ? backgroundColor.disable
+            : selected === time
+            ? backgroundColor.selected
+            : backgroundColor.able
+        }
         style={[
           styles.box,
           isActive && selected === time && { borderColor: "#1F70FF" },
           !isActive && { borderColor: "#E4E4E4" },
-          !isActive
-            ? { backgroundColor: "#F3F3F3" }
-            : selected === time
-            ? { backgroundColor: "#EEF3FF" }
-            : { backgroundColor: "#FFFFFF" },
         ]}
       >
         <Text
@@ -50,7 +55,7 @@ const TimeButton = ({ time, onSelectTime, selected, isActive }: Props) => {
         >
           {time}
         </Text>
-      </View>
+      </LinearGradient>
     </Pressable>
   );
 };

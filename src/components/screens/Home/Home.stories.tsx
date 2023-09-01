@@ -1,14 +1,17 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
-import SmallBox from "./SmallBox";
 import { View } from "react-native";
+import Home from "./Home";
 
-const meta: ComponentMeta<typeof SmallBox> = {
-  title: "Components/System/SmallBox",
-  component: SmallBox,
+const meta: ComponentMeta<typeof Home> = {
+  title: "Components/System/Home",
+  component: Home,
   parameters: {
     layout: "centered",
   },
   // tags: ["autodocs"],
+  argTypes: {
+    selected: { control: "date" },
+  },
   decorators: [
     // 필수
     (Story) => (
@@ -16,7 +19,6 @@ const meta: ComponentMeta<typeof SmallBox> = {
         style={{
           alignItems: "center",
           justifyContent: "center",
-          marginHorizontal: 40,
           flex: 1,
         }}
       >
@@ -28,11 +30,8 @@ const meta: ComponentMeta<typeof SmallBox> = {
 
 export default meta;
 
-type Story = ComponentStoryObj<typeof SmallBox>;
+type Story = ComponentStoryObj<typeof Home>;
 
-export const MySmallBox: Story = {
-  args: {
-    header: "하체, 유산소",
-    body: "5일 (토) 오전 10:00",
-  },
+export const MyHome: Story = {
+  args: {},
 };

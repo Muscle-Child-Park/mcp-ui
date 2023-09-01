@@ -27,6 +27,9 @@ dependencies:
   expo-constants:
     specifier: ~14.4.2
     version: 14.4.2(expo@49.0.7)
+  expo-linear-gradient:
+    specifier: ~12.3.0
+    version: 12.3.0(expo@49.0.7)
   expo-status-bar:
     specifier: ~1.6.0
     version: 1.6.0
@@ -113,6 +116,9 @@ devDependencies:
   chromatic:
     specifier: ^6.24.1
     version: 6.24.1
+  cross-env:
+    specifier: ^7.0.3
+    version: 7.0.3
   react-native-svg-transformer:
     specifier: ^1.1.0
     version: 1.1.0(react-native-svg@13.13.0)(react-native@0.72.3)
@@ -7627,6 +7633,14 @@ packages:
       sha.js: 2.4.11
     dev: true
 
+  /cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
+
   /cross-fetch@3.1.8:
     resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
     dependencies:
@@ -8553,6 +8567,14 @@ packages:
 
   /expo-keep-awake@12.3.0(expo@49.0.7):
     resolution: {integrity: sha512-ujiJg1p9EdCOYS05jh5PtUrfiZnK0yyLy+UewzqrjUqIT8eAGMQbkfOn3C3fHE7AKd5AefSMzJnS3lYZcZYHDw==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 49.0.7(@babel/core@7.19.3)
+    dev: false
+
+  /expo-linear-gradient@12.3.0(expo@49.0.7):
+    resolution: {integrity: sha512-f9e+Oxe5z7fNQarTBZXilMyswlkbYWQHONVfq8MqmiEnW3h9XsxxmVJLG8uVQSQPUsbW+x1UUT/tnU6mkMWeLg==}
     peerDependencies:
       expo: '*'
     dependencies:

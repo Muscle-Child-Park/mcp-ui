@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   textWrapper: {
+    width: "100%",
     flexDirection: "column",
     gap: 8,
   },
