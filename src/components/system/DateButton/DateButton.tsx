@@ -10,6 +10,8 @@ interface Props {
 }
 
 const DateButton = ({ date, onSelectDate, selected }: Props) => {
+  // just for storybook
+  selected = JSON.stringify(selected).split("T")[0].slice(1);
   /**
    * use moment to compare the date to today
    * if today, show 'Today'

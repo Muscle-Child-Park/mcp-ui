@@ -8,7 +8,7 @@ interface Props {
   onValueChangeHandler?: (checked: boolean) => void;
   text: string;
   style?: ViewStyle;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium";
   textColor?: string;
   checkBoxColor?: string;
 }
@@ -16,7 +16,6 @@ interface Props {
 const SIZE = {
   small: 18,
   medium: 24,
-  large: 32,
 };
 
 const Checkbox = ({
@@ -63,7 +62,15 @@ const Checkbox = ({
         />
       </Pressable>
       <Pressable style={styles.textContainer} onPress={triggerCheckbox}>
-        <Text style={{ color: textColor ?? "#555555" }}>{text}</Text>
+        <Text
+          style={[
+            { color: textColor ?? "#555555" },
+            size === "small" && { fontSize: 16 },
+            size === "medium" && { fontSize: 17 },
+          ]}
+        >
+          {text}
+        </Text>
       </Pressable>
     </View>
   );
@@ -90,7 +97,6 @@ const styles = StyleSheet.create({
   textContainer: {
     margin: 0,
     fontWeight: "500",
-    fontSize: 16,
     lineHeight: 19.2,
   },
 });

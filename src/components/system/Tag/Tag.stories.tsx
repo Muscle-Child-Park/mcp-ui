@@ -1,18 +1,14 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
-import ExcerciseChips from "./ExcerciseChips";
+import Tag from "./Tag";
 import { View } from "react-native";
-import { ExcerciseChipsNames } from "../../../constants/common";
 
-const meta: ComponentMeta<typeof ExcerciseChips> = {
-  title: "Components/System/ExcerciseChips",
-  component: ExcerciseChips,
+const meta: ComponentMeta<typeof Tag> = {
+  title: "Components/System/Tag",
+  component: Tag,
   parameters: {
     layout: "centered",
   },
   // tags: ["autodocs"],
-  argTypes: {
-    mode: { control: "select", options: ExcerciseChipsNames },
-  },
   decorators: [
     // 필수
     (Story) => (
@@ -31,10 +27,23 @@ const meta: ComponentMeta<typeof ExcerciseChips> = {
 
 export default meta;
 
-type Story = ComponentStoryObj<typeof ExcerciseChips>;
+type Story = ComponentStoryObj<typeof Tag>;
 
-export const BasicChip: Story = {
+export const TagForAll: Story = {
   args: {
-    mode: "pt",
+    text: "전체",
+    isSelected: true,
+  },
+};
+
+export const TagForClassContents: Story = {
+  args: {
+    text: "수업내용",
+  },
+};
+
+export const TagForCancelContents: Story = {
+  args: {
+    text: "취소내용",
   },
 };

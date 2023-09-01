@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react-native";
+import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
 import DateButton from "./DateButton";
 import { View } from "react-native";
 import { format } from "date-fns";
@@ -10,8 +10,8 @@ const meta: ComponentMeta<typeof DateButton> = {
     layout: "centered",
   },
   // tags: ["autodocs"],
-  args: {
-    date: new Date(),
+  argTypes: {
+    selected: { control: "date" },
   },
   decorators: [
     // 필수
@@ -31,12 +31,18 @@ const meta: ComponentMeta<typeof DateButton> = {
 
 export default meta;
 
-type Story = ComponentStory<typeof DateButton>;
+type Story = ComponentStoryObj<typeof DateButton>;
 
-export const SelectedButton: Story = (args) => (
-  <DateButton {...args} selected="2022-08-30" />
-);
+export const MyDateButton: Story = {
+  args: {
+    date: new Date(),
+    selected: "2023-09-01",
+  },
+};
 
-export const unSelectedButton: Story = (args) => (
-  <DateButton {...args} selected={format(new Date(), "yyy-MM-dd")} />
-);
+// export const unSelectedButton: Story = {
+//   args: {
+//     date: new Date(),
+//     selected: format(new Date(), "yyy-MM-dd"),
+//   },
+// };

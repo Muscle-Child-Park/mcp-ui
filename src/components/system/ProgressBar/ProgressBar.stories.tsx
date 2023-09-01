@@ -1,17 +1,19 @@
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
-import ExcerciseChips from "./ExcerciseChips";
+import ProgressBar from "./ProgressBar";
 import { View } from "react-native";
-import { ExcerciseChipsNames } from "../../../constants/common";
 
-const meta: ComponentMeta<typeof ExcerciseChips> = {
-  title: "Components/System/ExcerciseChips",
-  component: ExcerciseChips,
+const meta: ComponentMeta<typeof ProgressBar> = {
+  title: "Components/System/ProgressBar",
+  component: ProgressBar,
   parameters: {
     layout: "centered",
   },
   // tags: ["autodocs"],
   argTypes: {
-    mode: { control: "select", options: ExcerciseChipsNames },
+    percent: {
+      control: "select",
+      options: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+    },
   },
   decorators: [
     // 필수
@@ -31,10 +33,10 @@ const meta: ComponentMeta<typeof ExcerciseChips> = {
 
 export default meta;
 
-type Story = ComponentStoryObj<typeof ExcerciseChips>;
+type Story = ComponentStoryObj<typeof ProgressBar>;
 
-export const BasicChip: Story = {
+export const BasicProgressBar: Story = {
   args: {
-    mode: "pt",
+    percent: 30,
   },
 };

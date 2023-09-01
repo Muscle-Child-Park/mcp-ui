@@ -6,12 +6,10 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { colors } from "../../../constants/colors";
-
 interface CustomButtonProps {
   text: string;
   layoutmode?: "basic" | "fullWidth";
-  variant?: "stroke" | "fillPrimary";
-  isActive?: boolean;
+  variant?: "stroke" | "fillPrimary" | "fillSecondary";
   disabled?: boolean;
 }
 
@@ -21,7 +19,6 @@ const CustomButton = ({
   text,
   layoutmode = "basic",
   variant,
-  isActive = false,
   disabled,
   ...rest
 }: Props) => {
@@ -42,6 +39,11 @@ const CustomButton = ({
         variant === "fillPrimary" && {
           backgroundColor: colors.primary,
         },
+        variant === "fillSecondary" && {
+          backgroundColor: "#F1F4FC",
+          borderWidth: 1,
+          borderColor: colors.primary,
+        },
         // disabled && {opacity: 0.7},
         disabled && { backgroundColor: colors.gray25 },
       ]}
@@ -57,6 +59,7 @@ const CustomButton = ({
           // },
           variant === "stroke" && { color: colors.primary },
           variant === "fillPrimary" && { color: "white" },
+          variant === "fillSecondary" && { color: colors.primary },
           disabled && { color: "white" },
         ]}
       >
@@ -70,8 +73,6 @@ const buttonStyles = StyleSheet.create({
   button: {
     width: "100%",
     minHeight: 52,
-    paddingHorizontal: 29,
-    paddingVertical: 20,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,

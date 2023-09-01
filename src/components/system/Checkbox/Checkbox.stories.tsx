@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react-native";
+import { ComponentMeta, ComponentStoryObj } from "@storybook/react-native";
 import Checkbox from "./Checkbox";
 import { View } from "react-native";
 import { colors } from "../../../constants/colors";
@@ -10,6 +10,9 @@ const meta: ComponentMeta<typeof Checkbox> = {
     layout: "centered",
   },
   // tags: ["autodocs"],
+  argTypes: {
+    size: { control: "radio", options: ["small", "medium"] },
+  },
   decorators: [
     // 필수
     (Story) => (
@@ -28,26 +31,15 @@ const meta: ComponentMeta<typeof Checkbox> = {
 
 export default meta;
 
-type Story = ComponentStory<typeof Checkbox>;
+type Story = ComponentStoryObj<typeof Checkbox>;
 
-export const InActiveCheckbox: Story = () => (
-  <Checkbox
-    isChecked
-    text="네, 확인했어요!"
-    size="small"
-    style={{ gap: 8 }}
-    textColor={colors.gray100}
-    checkBoxColor={colors.primary}
-  />
-);
-
-export const ActiveCheckbox: Story = () => (
-  <Checkbox
-    isChecked={false}
-    text="네, 확인했어요!"
-    size="small"
-    style={{ gap: 8 }}
-    textColor={colors.gray100}
-    checkBoxColor={colors.primary}
-  />
-);
+export const MyCheckbox: Story = {
+  args: {
+    isChecked: false,
+    text: "네, 확인했어요!",
+    size: "small",
+    style: { gap: 8 },
+    textColor: colors.gray100,
+    checkBoxColor: colors.primary,
+  },
+};

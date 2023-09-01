@@ -35,7 +35,7 @@ const MyButtonMeta: ComponentMeta<typeof MyButton> = {
 };
 
 export default MyButtonMeta;
-
+// Component를 쓰는 방법
 type MyButtonStory = ComponentStory<typeof MyButton>;
 
 export const Basic: MyButtonStory = (args) => <MyButton {...args} />;
