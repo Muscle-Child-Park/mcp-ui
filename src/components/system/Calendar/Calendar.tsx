@@ -25,7 +25,6 @@ const Calendar = ({ onSelectDate, selected }: Props) => {
     )}주차`
   );
   const scrollViewRef = useRef<ScrollView | null>(null);
-  console.log(selected);
   // get the dates from today to 10 days from now, format them as strings and store them in state
   const getDates = () => {
     const _dates = [];

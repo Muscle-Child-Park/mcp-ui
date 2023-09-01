@@ -49,13 +49,20 @@ try {
 
 const getStories = () => {
   return {
+    "./src/components/system/BottomSheet/BottomSheet.stories.tsx": require("../components/system/BottomSheet/BottomSheet.stories.tsx"),
     "./src/components/system/Button/Button.stories.tsx": require("../components/system/Button/Button.stories.tsx"),
     "./src/components/system/Calendar/Calendar.stories.tsx": require("../components/system/Calendar/Calendar.stories.tsx"),
     "./src/components/system/Checkbox/Checkbox.stories.tsx": require("../components/system/Checkbox/Checkbox.stories.tsx"),
     "./src/components/system/CustomButton/CustomButton.stories.tsx": require("../components/system/CustomButton/CustomButton.stories.tsx"),
+    "./src/components/system/CustomHeader/CustomHeader.stories.tsx": require("../components/system/CustomHeader/CustomHeader.stories.tsx"),
     "./src/components/system/DateButton/DateButton.stories.tsx": require("../components/system/DateButton/DateButton.stories.tsx"),
+    "./src/components/system/DropDownBox/DropDownBox.stories.tsx": require("../components/system/DropDownBox/DropDownBox.stories.tsx"),
     "./src/components/system/ExcerciseChips/ExcerciseChips.stories.tsx": require("../components/system/ExcerciseChips/ExcerciseChips.stories.tsx"),
+    "./src/components/system/MainCard/MainCard.stories.tsx": require("../components/system/MainCard/MainCard.stories.tsx"),
     "./src/components/system/ProgressBar/ProgressBar.stories.tsx": require("../components/system/ProgressBar/ProgressBar.stories.tsx"),
+    "./src/components/system/ReservationCard/ReservationCard.stories.tsx": require("../components/system/ReservationCard/ReservationCard.stories.tsx"),
+    "./src/components/system/SmallBox/SmallBox.stories.tsx": require("../components/system/SmallBox/SmallBox.stories.tsx"),
+    "./src/components/system/SortingBar/SortingBar.stories.tsx": require("../components/system/SortingBar/SortingBar.stories.tsx"),
     "./src/components/system/Tag/Tag.stories.tsx": require("../components/system/Tag/Tag.stories.tsx"),
     "./src/components/system/TimeButton/TimeButton.stories.tsx": require("../components/system/TimeButton/TimeButton.stories.tsx"),
     "./src/components/system/TimeSelection/TimeSelection.stories.tsx": require("../components/system/TimeSelection/TimeSelection.stories.tsx"),
