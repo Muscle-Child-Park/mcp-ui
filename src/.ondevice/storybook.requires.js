@@ -56,6 +56,8 @@ const getStories = () => {
     "./src/components/system/ExcerciseChips/ExcerciseChips.stories.tsx": require("../components/system/ExcerciseChips/ExcerciseChips.stories.tsx"),
     "./src/components/system/ProgressBar/ProgressBar.stories.tsx": require("../components/system/ProgressBar/ProgressBar.stories.tsx"),
     "./src/components/system/Tag/Tag.stories.tsx": require("../components/system/Tag/Tag.stories.tsx"),
+    "./src/components/system/TimeButton/TimeButton.stories.tsx": require("../components/system/TimeButton/TimeButton.stories.tsx"),
+    "./src/components/system/TimeSelection/TimeSelection.stories.tsx": require("../components/system/TimeSelection/TimeSelection.stories.tsx"),
   };
 };
 
